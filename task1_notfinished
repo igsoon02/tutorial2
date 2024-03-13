@@ -1,0 +1,50 @@
+import java.time.*;
+import java.util.Scanner;
+
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        LocalDate DZISIAJ = LocalDate.now();
+        String today = DZISIAJ.getDayOfWeek().name();
+
+
+        System.out.println("Podaj wiek: ");
+        int wiek = scanner.nextInt();
+
+        System.out.println("Podaj miasto zamieszkania: ");
+        String miasto = scanner.next();
+
+        double cena1 = 0;
+        double znizka = 0;
+      
+
+        if (wiek < 10 ){
+            cena1 = 0;
+            znizka = 100;
+
+        }else if (wiek >= 10 || wiek <= 18 ) {
+            cena1 = 20;
+            znizka = 50;
+        }else if (miasto == "Warszawa" || miasto== "warzawa" ){
+
+                cena1 = (cena1 * 0.9);
+                znizka = (znizka + 10);
+            
+        } else {
+            cena1 = 40;
+            znizka = 0;
+        }
+        
+        
+
+
+        System.out.println("Data: " + miasto + ", " + wiek + " years old, weekday Ticket price: " + cena1);
+
+
+
+
+    }
+}
